@@ -1,0 +1,29 @@
+type Condominio {
+    id: ID!,
+    nombre: String,
+    direccion: String,
+    cedulaJuridica: Int,
+    representante: String,
+    unidades: Int,
+    cuotaCondominal: Int
+}
+
+type Query {
+    condominios:[Condominio]
+}
+
+type Mutation {
+    createCondominio(nombre: String,
+                    	direccion: String,
+                    	cedulaJuridica: Int,
+                    	representante: String
+                    	unidades: Int,
+                    	cuotaCondominal: Int): Condominio,
+	updateCondominio(id: ID,
+						nombre: String,
+                    	direccion: String,
+                    	cedulaJuridica: Int,
+                    	representante: String
+                    	unidades: Int,
+                    	cuotaCondominal: Int): Condominio
+}
